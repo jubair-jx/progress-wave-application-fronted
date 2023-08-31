@@ -6,6 +6,7 @@ import { Link, Route, Routes } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Footer } from "./Shared/Footer/Footer";
 import Banner from "./components/Banner/Banner";
+import Login from "./components/Login/Login";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <NavbarSec />
         <Routes>
           <Route path="/" element={<Banner />}></Route>
+          <Route path="/login" element={<Login />}></Route>
         </Routes>
         <Footer />
       </Router>
