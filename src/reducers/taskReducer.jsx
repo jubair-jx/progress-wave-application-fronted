@@ -7,7 +7,7 @@ const taskReducer = (tasks, action) => {
         boardId: action.payload.boardId,
         listId: action.payload.listId,
       };
-      return [...task, task];
+      return [...tasks, task];
     }
     case "REMOVE_TASK": {
       return tasks.filter((task) => task.id !== action.payload);

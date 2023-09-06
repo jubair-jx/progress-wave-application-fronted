@@ -31,7 +31,7 @@ const Navbar = () => {
         </div>
         <div className="auth-buttons">
           <div className="relative inline-flex  group">
-            <div className="absolute transitiona-all duration-1000 opacity-70 -inset-px  bg-gradient-to-r from-[#246186] via-[#FF44EC] to-[#FF675E] rounded-xl blur-xl group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt"></div>
+            <div className="absolute transitiona-all duration-1000 opacity-70 -inset-px  bg-gradient-to-r from-[#246186] via-[#73c8f0] to-[#2129c8] rounded-xl blur-xl group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt"></div>
             <Link
               to="/login"
               title="Get quote now"
