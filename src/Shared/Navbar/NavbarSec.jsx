@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 const Navbar = () => {
   return (
-    <nav className="py-4 border-b animate-text sticky top-0 right-0 z-30 bg-gradient-to-r from-violet-900 via-[#b326a5d4] to-[#8f2b94db]">
+    <nav className="py-4 border-b animate-text sticky top-0 right-0 z-30 bg-gradient-to-r from-violet-900 via-[#d52fc5d4] to-[#0b4644e5]">
       <div className="navbar-container">
         <div className="logo text-white flex justify-center items-center gap-3 cursor-pointer">
           <svg

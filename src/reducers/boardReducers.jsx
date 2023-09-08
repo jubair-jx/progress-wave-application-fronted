@@ -1,8 +1,19 @@
+const currentDate = new Date(); // Create a new Date object with the current date and time
+
+// Extract date components
+const year = currentDate.getFullYear();
+const month = String(currentDate.getMonth() + 1).padStart(2, "0"); // Adding 1 to month and zero-padding
+const day = String(currentDate.getDate()).padStart(2, "0"); // Zero-padding
+
+// Construct the formatted date and time string
+const formattedDateTime = `${year}-${month}-${day} `;
+
 const boardReducer = (boards = [], action) => {
   switch (action.type) {
     case "CREATE_BOARD": {
       let board = {
         id: Date.now() + "",
+        date: formattedDateTime,
         title: action.payload,
         lists: [],
         tasks: [],

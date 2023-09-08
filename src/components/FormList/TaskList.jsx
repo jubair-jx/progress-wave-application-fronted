@@ -1,12 +1,14 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { TaskContext } from "../../context/taskContext";
 import Additem from "./Additem";
 import AdditemForm from "./AdditemForm";
 import { ListContext } from "../../context/listContext";
 import { BoardContext } from "../../context/boardContex";
 import TaskCard from "./TaskCard";
+import { Droppable } from "react-beautiful-dnd";
 
-const TaskList = ({ taskList }) => {
+const TaskList = ({ taskList, index }) => {
+  const ref = useRef();
   const { tasks: allTasks, dispatchTaskAction } = useContext(TaskContext);
   const [taskTitle, setTaskTitle] = useState("");
   const [editMode, setEditmode] = useState(false);
@@ -14,7 +16,7 @@ const TaskList = ({ taskList }) => {
   const { dispatchBoardAction } = useContext(BoardContext);
   const submitHandler = (e) => {
     e.preventDefault();
-    const id = Date.now();
+    const id = Date.now() + "";
     dispatchTaskAction({
       type: "CREATE_TASK",
       payload: {
@@ -43,42 +45,54 @@ const TaskList = ({ taskList }) => {
     });
   };
   return (
-    <div className="">
-      <div className="px-4 py-12">
-        <div class="rounded bg-slate-400 w-64 p-2">
-          <div class="flex justify-between py-1">
-            <h3 class="text-lg font-bold">{taskList.title}</h3>
-            <svg
-              class="h-4 fill-current text-grey-dark cursor-pointer"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-            >
-              <path d="M5 10a1.999 1.999 0 1 0 0 4 1.999 1.999 0 1 0 0-4zm7 0a1.999 1.999 0 1 0 0 4 1.999 1.999 0 1 0 0-4zm7 0a1.999 1.999 0 1 0 0 4 1.999 1.999 0 1 0 0-4z" />
-            </svg>
+    <Droppable droppableId={taskList.id + ""} index={index}>
+      {(provided) => (
+        <div ref={provided.innerRef} {...provided.droppableProps} className="">
+          <div className="px-4 py-12">
+            <div class="rounded bg-slate-400 w-64 p-2">
+              <div class="flex justify-between py-1">
+                <h3 class="text-lg font-bold">{taskList.title}</h3>
+                <svg
+                  onClick={removeHandler}
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            {taskList.tasks
+              .map((task) => {
+                return allTasks.find((item) => item.id === task);
+              })
+              .map((work, index) => (
+                <TaskCard index={index} task={work} key={work.id} />
+              ))}
+            {provided.placeholder}
+            {!editMode ? (
+              <Additem setEditmode={setEditmode}></Additem>
+            ) : (
+              <AdditemForm
+                title={taskTitle}
+                setEditmode={setEditmode}
+                editMode={editMode}
+                submitHandler={submitHandler}
+                onChangeHandler={(e) => setTaskTitle(e.target.value)}
+              />
+            )}
           </div>
         </div>
-
-        {taskList.tasks
-          .map((task) => {
-            return allTasks.find((item) => item.id === task);
-          })
-          .map((work) => (
-            <TaskCard task={work} key={work.id} />
-          ))}
-
-        {!editMode ? (
-          <Additem setEditmode={setEditmode}></Additem>
-        ) : (
-          <AdditemForm
-            title={taskTitle}
-            setEditmode={setEditmode}
-            editMode={editMode}
-            submitHandler={submitHandler}
-            onChangeHandler={(e) => setTaskTitle(e.target.value)}
-          />
-        )}
-      </div>
-    </div>
+      )}
+    </Droppable>
   );
 };
 

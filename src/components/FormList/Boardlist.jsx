@@ -7,7 +7,7 @@ const Boardlist = () => {
   const { boards } = useContext(BoardContext);
   console.log(boards);
   return (
-    <div className="grid grid-cols-3 gap-6 px-14 py-8">
+    <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 gap-4 px-14 py-8">
       {boards.map((board) => (
         <Link key={board.id} to={`/board/${board.id}`}>
           <BoardItem board={board}></BoardItem>
