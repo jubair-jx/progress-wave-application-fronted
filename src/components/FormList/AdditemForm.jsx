@@ -30,7 +30,7 @@ const AdditemForm = ({
       </div>
       <div className="flex gap-4 items-center mt-2">
         <button
-          className="bg-teal-800 text-white px-4 rounded-md py-2"
+          className="bg-blue-800 text-white px-4 rounded-md py-2"
           onClick={createHandler}
         >
           {listForm ? "Add List" : "Add Task"}
@@ -45,7 +45,7 @@ const AdditemForm = ({
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-7 h-7 cursor-pointer bg-red-200 rounded-full"
+          className="w-7 h-7 cursor-pointer bg-gray-100 text-red-600 rounded-full"
         >
           <path
             strokeLinecap="round"

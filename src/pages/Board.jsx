@@ -5,8 +5,10 @@ import Boardlist from "../components/FormList/Boardlist";
 const Board = () => {
   return (
     <>
-      <BoardCreatingForm />
-      <Boardlist></Boardlist>
+      <div className=" bg-gradient-to-l from-[#0f2344dd] via-[#1c0932dd] to-[#092125]">
+        <BoardCreatingForm />
+        <Boardlist></Boardlist>
+      </div>
     </>
   );
 };

@@ -52,15 +52,30 @@ const BoardDetails = () => {
   };
   return (
     <DragDropContext onDragEnd={onDragHandler}>
-      <div className="w-full  bg-gradient-to-l from-[#310d36dd] via-[#16674edd] to-[#194248]">
-        <div className=" mx-auto">
+      <div className="w-full  bg-gradient-to-l from-[#0f2344dd] via-[#1c0932dd] to-[#092125]">
+        <div className="flex justify-center items-center pt-8">
           <Link
-            className="text-center flex justify-center items-center w-40  px-3 py-4 bg-slate-400"
-            to={"/"}
+            to="/board"
+            className="bg-blue-800 hover:bg-slate-800 duration-500 flex gap-2 border-[2px] border-orange-200 text-white  py-2 px-4 rounded-md hover:text-white "
           >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+              />
+            </svg>
             Back to Board
           </Link>
         </div>
+
         <div className="grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 sm:grid-cols-2 grid-cols-1">
           {lists
             .filter((list) => list.boardId === boardId)

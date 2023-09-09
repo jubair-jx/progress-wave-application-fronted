@@ -34,6 +34,7 @@ const TaskCard = ({ task, index }) => {
     <Draggable index={index} draggableId={task.id}>
       {(provided) => (
         <div
+          className=""
           ref={provided.innerRef}
           {...provided.draggableProps}
           {...provided.dragHandleProps}

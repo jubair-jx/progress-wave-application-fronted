@@ -9,6 +9,8 @@ import Banner from "./components/Banner/Banner";
 import Login from "./components/Login/Login";
 import Board from "./pages/Board";
 import BoardDetails from "./pages/BoardDetails";
+import Register from "./components/Register/Register";
+import PrivateRoute from "./components/PrivateRoutes/PrivateRoute";
 
 function App() {
   return (
@@ -18,8 +20,23 @@ function App() {
         <Routes>
           <Route path="/" element={<Banner />}></Route>
           <Route path="/login" element={<Login />}></Route>
-          <Route path="/board" element={<Board />}></Route>
-          <Route path="/board/:boardId" element={<BoardDetails />}></Route>
+          <Route path="/register" element={<Register />}></Route>
+          <Route
+            path="/board"
+            element={
+              <PrivateRoute>
+                <Board />
+              </PrivateRoute>
+            }
+          ></Route>
+          <Route
+            path="/board/:boardId"
+            element={
+              <PrivateRoute>
+                <BoardDetails />
+              </PrivateRoute>
+            }
+          ></Route>
         </Routes>
         <Footer />
       </Router>

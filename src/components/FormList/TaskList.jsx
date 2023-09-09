@@ -48,8 +48,8 @@ const TaskList = ({ taskList, index }) => {
     <Droppable droppableId={taskList.id + ""} index={index}>
       {(provided) => (
         <div ref={provided.innerRef} {...provided.droppableProps} className="">
-          <div className="px-4 py-12">
-            <div class="rounded bg-slate-400 w-64 p-2">
+          <div className="px-4 py-12 md:ml-0 ml-8">
+            <div class="rounded bg-slate-200 w-64 p-2">
               <div class="flex justify-between py-1">
                 <h3 class="text-lg font-bold">{taskList.title}</h3>
                 <svg
@@ -59,7 +59,7 @@ const TaskList = ({ taskList, index }) => {
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  class="w-6 h-6"
+                  class="w-6 h-6 cursor-pointer"
                 >
                   <path
                     strokeLinecap="round"

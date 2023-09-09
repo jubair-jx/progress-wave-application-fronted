@@ -8,7 +8,7 @@ const Additem = ({
   return (
     <div
       onClick={() => setEditmode(true)}
-      className="flex gap-2 w-[195px] mt-12 h-12 px-4 py-3 cursor-pointer rounded-md  bg-teal-900 text-white"
+      className="flex gap-2 w-[195px] mb-6 ml-4 mt-12 h-12 px-4 py-3 cursor-pointer rounded-md  bg-blue-500 text-white"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -25,7 +25,7 @@ const Additem = ({
         />
       </svg>
       <p className="text-md text-white">
-        {listAddItem ? "Add another list" : "Add a Task"}
+        {listAddItem ? "Make a list" : "Add a Task"}
       </p>
     </div>
   );
