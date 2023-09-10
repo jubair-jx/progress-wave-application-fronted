@@ -1,9 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { BoardContext } from "../../context/boardContex";
 import { ListContext } from "../../context/listContext";
 import { TaskContext } from "../../context/taskContext";
+import { AuthContext } from "../../context/AuthProvider";
+import Swal from "sweetalert2";
 
-const BoardItem = ({ board }) => {
+const BoardItem = ({ board, boardData }) => {
   const { boards, dispatchBoardAction } = useContext(BoardContext);
   const { lists, dispatchListAction } = useContext(ListContext);
   const { tasks, dispatchTaskAction } = useContext(TaskContext);
