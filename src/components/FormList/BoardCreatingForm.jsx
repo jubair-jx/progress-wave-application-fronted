@@ -31,7 +31,7 @@ const BoardCreatingForm = () => {
       title: input,
       date: formattedDateTime,
     };
-    fetch("http://localhost:4000/boards", {
+    fetch("https://progress-wave-backend.vercel.app/boards", {
       method: "POST",
       headers: {
         "content-type": "application/json",

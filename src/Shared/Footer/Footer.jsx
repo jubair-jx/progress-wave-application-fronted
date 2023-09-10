@@ -30,12 +30,10 @@ export const Footer = () => {
             </a>
             <div className="mt-6 lg:max-w-sm">
               <p className="text-sm text-gray-800">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam.
-              </p>
-              <p className="mt-4 text-sm text-gray-800">
-                Eaque ipsa quae ab illo inventore veritatis et quasi architecto
-                beatae vitae dicta sunt explicabo.
+                Progress Wave is a task management application built using the
+                MERN (MongoDB, Express, React, Node.js) stack. It provides an
+                organized platform for managing your tasks, similar to Trello
+                but with unique features tailored to your needs.
               </p>
             </div>
           </div>
@@ -51,19 +49,22 @@ export const Footer = () => {
                 title="Our phone"
                 className="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800"
               >
-                850-123-5021
+                +8801825182097
               </a>
             </div>
             <div className="flex">
-              <p className="mr-1 text-gray-800">Email:</p>
+              <a
+                href="https://mohammad-jubair.netlify.app/"
+                className="mr-1 text-gray-800"
+              >
+                Website
+              </a>
               <a
                 href="mailto:info@lorem.mail"
                 aria-label="Our email"
                 title="Our email"
                 className="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800"
-              >
-                info@lorem.mail
-              </a>
+              ></a>
             </div>
             <div className="flex">
               <p className="mr-1 text-gray-800">Address:</p>
@@ -75,7 +76,7 @@ export const Footer = () => {
                 title="Our address"
                 className="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800"
               >
-                312 Lovely Street, NY
+                Chattogram, Bangladesh
               </a>
             </div>
           </div>
@@ -110,10 +111,6 @@ export const Footer = () => {
                 </svg>
               </a>
             </div>
-            <p className="mt-4 text-sm text-gray-800">
-              Bacon ipsum dolor amet short ribs pig sausage prosciutto chicken
-              spare ribs salami.
-            </p>
           </div>
         </div>
         <div className="flex justify-center items-center pt-8 pb-8 border-t lg:flex-row">

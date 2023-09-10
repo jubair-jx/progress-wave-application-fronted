@@ -28,7 +28,7 @@ const Register = () => {
           email: data.email,
           image: data.photoUrl,
         };
-        fetch("http://localhost:4000/users", {
+        fetch("https://progress-wave-backend.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",
